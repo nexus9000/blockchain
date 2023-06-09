@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.itstep.blockchain.domain.TransactionPersistent;
 @Repository
-public interface TransactionPersitentRepository extends JpaRepository<TransactionPersistent,Long> {
+public interface TransactionPersistentRepository extends
+JpaRepository<TransactionPersistent,Long> {
 
 }
