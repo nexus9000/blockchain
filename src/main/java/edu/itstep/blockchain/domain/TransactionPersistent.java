@@ -1,5 +1,7 @@
 package edu.itstep.blockchain.domain;
 
+import java.security.PublicKey;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,5 +14,15 @@ public class TransactionPersistent {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+   
+   private String transactionId;
+   
+   private PublicKey  sender;
+   
+   private PublicKey receiver;
+   
+   private double amount;
+   
+   private byte[] signature;
    
 }
