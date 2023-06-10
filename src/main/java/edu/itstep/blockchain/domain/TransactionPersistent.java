@@ -23,6 +23,8 @@ public class TransactionPersistent {
    
    private double amount;
    
+   private double fee;
+   
    private byte[] signature;
    
 }
