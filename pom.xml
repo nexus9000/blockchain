@@ -37,12 +37,12 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		
-    <dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <scope>runtime</scope>
-</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -80,7 +80,12 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.sonatype.ossindex.maven</groupId>
+				<artifactId>ossindex-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
+
 	</build>
 
 </project>
