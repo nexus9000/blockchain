@@ -101,6 +101,9 @@
 						/target/audit-report.json
 					</reportFile>
 					<excludeVulnerabilityIds>
+						<!-- Effective resolution: Inapplicable issue Argumentation: h2 is 
+							used for test purposes not intend to use in production env. Evaluated by 
+							- Evaluation date -->
 						<exclude>CVE-2018-14335</exclude>
 						<exclude>CVE-2022-45868</exclude>
 						<exclude>CVE-2022-1471</exclude>
