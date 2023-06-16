@@ -33,6 +33,7 @@
 		<java.version>17</java.version>
 		<initial.year>2022</initial.year>
 		<plugin.dependency-check.version>7.3.2</plugin.dependency-check.version>
+		<dependency.plugin.ossindex-maven.version>3.2.0</dependency.plugin.ossindex-maven.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -115,7 +116,7 @@
 			<plugin>
 				<groupId>org.sonatype.ossindex.maven</groupId>
 				<artifactId>ossindex-maven-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>${dependency.plugin.ossindex-maven.version}</version>
 				<executions>
 					<execution>
 						<id>audit-dependencies</id>
