@@ -3,12 +3,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<organization>
+		<name></name>
+		<url></url>
+	</organization>
+	<developers>
+		<developer>
+			<name>Georgi Stoev</name>
+			<email>java.user.tester@gmail.com</email>
+		</developer>
+	</developers>
+	
+		
+	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.1.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>edu.itstep</groupId>
 	<artifactId>transactionBank</artifactId>
 	<version>1.0</version>
@@ -16,6 +31,8 @@
 	<description>Bank for blockchain transactions</description>
 	<properties>
 		<java.version>17</java.version>
+		<initial.year>2022</initial.year>
+		<plugin.dependency-check.version>7.3.2</plugin.dependency-check.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -84,9 +101,16 @@
 				</configuration>
 			</plugin>
 			<plugin>
-			<groupId>org.owasp</groupId>
-			<artifactId>dependency-check-maven</artifactId>
-			<version>${plugin.dependency-check.version}</version>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${plugin.dependency-check.version}</version>
+				<executions>
+				<execution>
+				<goals>
+				<goal>check</goal>
+				</goals>
+				</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.sonatype.ossindex.maven</groupId>
@@ -106,12 +130,9 @@
 						/target/audit-report.json
 					</reportFile>
 					<excludeVulnerabilityIds>
-						<!-- Effective resolution: Inapplicable issue 
-						Argumentation: h2 is 
-							used for test purposes not intend to use in production env. 
-							Evaluated by 
-							Evaluation date 
-							-->
+						<!-- Effective resolution: Inapplicable issue Argumentation: h2 is 
+							used for test purposes not intend to use in production env. Evaluated by 
+							Evaluation date -->
 						<exclude>CVE-2018-14335</exclude>
 						<exclude>CVE-2022-45868</exclude>
 						<exclude>CVE-2022-1471</exclude>
