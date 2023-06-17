@@ -79,3 +79,12 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection wa
 2023-06-10 11:56:09 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA[*].TABLES"; SQL statement:
 SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.TABLES [42000-214]
+2023-06-17 10:28:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TRANSACTION_PERSISTENT" not found (this database is empty); SQL statement:
+insert into transaction_persistent (amount,fee,receiver,sender,signature,transaction_id,id) values (?,?,?,?,?,?,default) [42104-214]
+2023-06-17 10:30:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RECEIVER BINARY VARYING(255)": "X'aced00057372003c6f72672e626f756e6379636173746c652e6a63616a63652e70726f76696465... (256)"; SQL statement:
+insert into transaction_persistent (amount,fee,receiver,sender,signature,transaction_id,id) values (?,?,?,?,?,?,default) [22001-214]
+2023-06-17 10:34:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RECEIVER BINARY VARYING(255)": "X'aced00057372003c6f72672e626f756e6379636173746c652e6a63616a63652e70726f76696465... (256)"; SQL statement:
+insert into transaction_persistent (amount,fee,receiver,sender,signature,transaction_id,id) values (?,?,?,?,?,?,default) [22001-214]
