@@ -34,6 +34,14 @@ public class TransactionPersistent {
  
    private byte[] signature;
    
+   public TransactionPersistent(String transactionId, String sender, String receiver, double amount,double fee,byte[] signature ) {
+	   this.transactionId = transactionId;
+	   this.sender = sender;
+	   this.receiver = receiver;
+	   this.amount = amount;
+	   this.fee = fee;
+	   this.signature = signature;
+   }
    public TransactionPersistent(String sender, String receiver, double amount, List<TransactionInput> inputs) {
 	   this.sender = sender;
 	   this.receiver = receiver;

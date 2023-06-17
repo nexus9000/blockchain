@@ -23,9 +23,10 @@ public class AlbumsWeb2Application {
 		return(String[] arg)->{
 			 Wallet lender =  new Wallet();
 			 Wallet georgi = new Wallet();
-			TransactionPersistent genesisTransaction = new TransactionPersistent (lender.getPublicKey().toString(),
-					georgi.getPublicKey().toString(),10_000, null);
-			logger.trace(genesisTransaction + " was added");
+			//TransactionPersistent genesisTransaction = new TransactionPersistent
+			//		(lender.getPublicKey().toString(),
+			//		georgi.getPublicKey().toString(),10_000, null);
+			//logger.trace(genesisTransaction + " was added");
 			//if genesisTransaction not exists create a new one
 			
 			//transactionRepo.save(genesisTransaction);
