@@ -88,3 +88,11 @@ insert into transaction_persistent (amount,fee,receiver,sender,signature,transac
 2023-06-17 10:34:57 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "RECEIVER BINARY VARYING(255)": "X'aced00057372003c6f72672e626f756e6379636173746c652e6a63616a63652e70726f76696465... (256)"; SQL statement:
 insert into transaction_persistent (amount,fee,receiver,sender,signature,transaction_id,id) values (?,?,?,?,?,?,default) [22001-214]
+2023-06-17 10:35:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-06-17 11:27:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-06-17 11:40:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-06-17 11:44:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

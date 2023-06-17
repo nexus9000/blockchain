@@ -9,33 +9,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import edu.itstep.blockchain.transactions.TransactionInput;
-import edu.itstep.blockchain.transactions.TransactionOutput;
 import edu.itstep.blockchain.crypto.CryptographyHelper;
-@Data
+
+@Getter@Setter@NoArgsConstructor
 @Entity
 public class TransactionPersistent {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
-   
+   @Column
    private String transactionId;
-   @Column(length = 1000)
-   private PublicKey  sender;
-   @Column(length = 1000)
-   private PublicKey receiver;
+   @Column(length = 1_000)
+   private String  sender;
+   @Column(length = 1_000)
+   private String receiver;
    
    private double amount;
    
    private double fee;
  
    private byte[] signature;
-   public TransactionPersistent(PublicKey sender, PublicKey receiver, double amount, List<TransactionInput> inputs) {
-	   
+   
+   public TransactionPersistent(String sender, String receiver, double amount, List<TransactionInput> inputs) {
 	   this.sender = sender;
 	   this.receiver = receiver;
-	  
 	   this.amount = amount;
 	   calculateHash();
    }
