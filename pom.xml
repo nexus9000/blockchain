@@ -13,9 +13,9 @@
 			<email>java.user.tester@gmail.com</email>
 		</developer>
 	</developers>
-	
-		
-	
+
+
+
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -82,7 +82,11 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -106,15 +110,15 @@
 				<artifactId>dependency-check-maven</artifactId>
 				<version>${plugin.dependency-check.version}</version>
 				<configuration>
-				<skipProvidedScope>true</skipProvidedScope>
-				<skipTestScope>true</skipTestScope>
+					<skipProvidedScope>true</skipProvidedScope>
+					<skipTestScope>true</skipTestScope>
 				</configuration>
 				<executions>
-				<execution>
-				<goals>
-				<goal>check</goal>
-				</goals>
-				</execution>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
