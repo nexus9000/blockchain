@@ -1,7 +1,7 @@
 package edu.itstep.blockchain.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,6 +28,10 @@ public class TransactionController {
 	@GetMapping("poolTransactions")
 	List<TransactionPersistent> getAll(){
 		return (List<TransactionPersistent>) repo.findAll();
+	}
+	@GetMapping("genesis")
+	Optional<TransactionPersistent> getGenesis() {
+		return Optional.of(repo.getGenesis());
 	}
 	@PostMapping("addTransaction")
 	TransactionPersistent add(@RequestBody TransactionPersistent[] transaction) {

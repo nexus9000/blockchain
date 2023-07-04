@@ -2,6 +2,7 @@ package edu.itstep.blockchain;
 
 import java.util.List;
 
+import org.bouncycastle.util.encoders.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -28,14 +29,14 @@ public class AlbumsWeb2Application {
 			Wallet georgi = new Wallet();
 			List<TransactionPersistent> listTransactions = transactionRepo.findAll();
 			if ((listTransactions.size() > 0) && (!transactionRepo.isGenesisExists())) {
-				TransactionPersistent genesisTransaction = new TransactionPersistent(lender.getPublicKey().toString(),
-						georgi.getPublicKey().toString(), 10_000, true);
+				TransactionPersistent genesisTransaction = new TransactionPersistent(Base64.toBase64String(lender.getPublicKey().getEncoded()),
+						Base64.toBase64String(georgi.getPublicKey().getEncoded()), 10_000, true);
 				logger.trace(genesisTransaction + " was added");
 			    transactionRepo.save(genesisTransaction);
 			}else if(listTransactions.size() == 0) {
-				TransactionPersistent genesisTransaction = new TransactionPersistent(lender.getPublicKey().toString(),
-						georgi.getPublicKey().toString(), 10_000, true);
-				logger.trace(genesisTransaction + " was added");
+				TransactionPersistent genesisTransaction = new TransactionPersistent(Base64.toBase64String(lender.getPublicKey().getEncoded()),
+						Base64.toBase64String(georgi.getPublicKey().getEncoded()), 10_000, true);
+				logger.trace( Base64.toBase64String(georgi.getPublicKey().getEncoded())+ " was added");
 			    transactionRepo.save(genesisTransaction);
 			}
 

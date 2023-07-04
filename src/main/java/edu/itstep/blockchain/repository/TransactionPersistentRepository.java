@@ -10,4 +10,6 @@ import edu.itstep.blockchain.domain.TransactionPersistent;
 public interface TransactionPersistentRepository extends JpaRepository<TransactionPersistent, Long> {
     @Query("select s.isGenesisTransaction from TransactionPersistent s")
 	Boolean isGenesisExists();
+    @Query("select s from TransactionPersistent s where s.isGenesisTransaction=true")
+    TransactionPersistent getGenesis();
 }

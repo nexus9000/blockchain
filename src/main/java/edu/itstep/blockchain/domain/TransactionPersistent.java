@@ -1,7 +1,6 @@
 package edu.itstep.blockchain.domain;
 
-import java.security.PublicKey;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import jakarta.persistence.Column;
